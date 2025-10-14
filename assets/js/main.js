@@ -66,5 +66,19 @@ const scrollUp = () =>{
         this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
                                                 : scrollUp.classList.remove('show-scroll')
 }
-windowo.addEventListener('scroll', scrollUp)
+window.addEventListener('scroll', scrollUp)
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    Duration: 2500,
+    delay: 400,
+    reset: true //
+})
+
+sr.reveal('.home__data')
+sr.reveal('.home__tree-1', {origin: 'left', delay: 800})
+sr.reveal('.home__tree-2', {origin: 'right', delay: 800})
+sr.reveal('.home__img', {delay: 800})
+sr.reveal('.category__card, .items__card', {interval: 100})
+sr.reveal('.about__img, .about__data', {origin: 'left'})
