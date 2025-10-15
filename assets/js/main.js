@@ -1,7 +1,21 @@
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById('nav-menu'),
-navToggle = dpcument.getElementById('nav-toggle'),
-navClose = document.getElementById('nav-close')
+      navToggle = document.getElementById('nav-toggle'),
+      navClose = document.getElementById('nav-close')
+
+/* Menu show */
+if(navToggle){
+    navToggle.addEventListener('click', () =>{
+        navMenu.classList.add('show-menu')
+    })
+}
+
+/* Menu hidden */
+if(navClose){
+    navClose.addEventListener('click', () =>{
+        navMenu.classList.remove('show-menu')
+    })
+}
 
 /*===== MENU SHOW =======*/
 /* Validate if constant exists */
@@ -64,7 +78,7 @@ const scrollUp = () =>{
         const scrollUp = document.getElementById('scroll-up')
     // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup
         this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
-                                                : scrollUp.classList.remove('show-scroll')
+                            : scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
 /*=============== SCROLL REVEAL ANIMATION ===============*/
@@ -73,7 +87,7 @@ const sr = ScrollReveal({
     distance: '60px',
     Duration: 2500,
     delay: 400,
-    reset: true //
+    //reset: true // Animations repeat
 })
 
 sr.reveal('.home__data, .footer__content, .footer__logo, .footer__description')

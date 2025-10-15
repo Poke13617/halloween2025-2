@@ -1023,3 +1023,8 @@ display:grid;
   }
 
 }
+
+/*Custom CSS - cursor*/
+#nav-toggle{
+  cursor:pointer
+}
